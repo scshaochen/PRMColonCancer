@@ -11,8 +11,6 @@ dat$Group <- dat$group2
 # set trainControl mode to leave-one-out method
 ctrl <- trainControl(method = "LOOCV", classProbs = TRUE, savePredictions = "final", summaryFunction= twoClassSummary)
 
-#list all methods in caret
-#names(getModelInfo())
 
 # Train averaged neural network (avNNet) model with four proteins
 model <- train(factor(Group) ~ CORO1C.creatinine + RAD23B.creatinine + GSPT2.creatinine + NDN.creatinine, data = dat, 
